@@ -183,7 +183,7 @@ public class GetDataUtils {
 			sbUrl = sb.substring(0, sb.length() - 1);
 		}
 		System.out.println("send_url:" + url);
-		System.out.println("send_data:" + sbUrl);
+		//System.out.println("send_data:" + sbUrl);
 		// 尝试发送请求
 		try {
 			u = new URL(url);
@@ -233,7 +233,6 @@ public class GetDataUtils {
 				.println("-----------------------今日-------------------------");
 		ArrayList<TodayLuck> todays = (ArrayList<TodayLuck>) map.get("今日");
 		for (int i = 0; i < todays.size(); i++) {
-			System.out.println("今日：：" + todays.get(i));
 			String msg = util.http(url,
 					util.getTodayMap(getName(i), getDay(), todays.get(i)));
 			System.out.println("今日返回结果：：" + msg);
@@ -243,7 +242,6 @@ public class GetDataUtils {
 				.println("-----------------------明日-------------------------");
 		ArrayList<TodayLuck> tomorrows = (ArrayList<TodayLuck>) map.get("明日");
 		for (int i = 0; i < tomorrows.size(); i++) {
-			System.out.println("明日" + tomorrows.get(i));
 			String msg = util.http(
 					url,
 					util.getTodayMap(getName(i), getTomorrow(),
@@ -254,7 +252,6 @@ public class GetDataUtils {
 				.println("-----------------------本周-------------------------");
 		ArrayList<WeekLuck> weeks = (ArrayList<WeekLuck>) map.get("本周");
 		for (int i = 0; i < weeks.size(); i++) {
-			System.out.println("本周" + weeks.get(i));
 			String msg = util.http(url,
 					util.getWeekMap(getName(i), weeks.get(i)));
 			System.out.println("本周返回结果：：" + msg);
@@ -263,7 +260,6 @@ public class GetDataUtils {
 				.println("-----------------------本月-------------------------");
 		ArrayList<MonthLuck> months = (ArrayList<MonthLuck>) map.get("本月");
 		for (int i = 0; i < months.size(); i++) {
-			System.out.println("本月" + months.get(i));
 			String msg = util.http(url,
 					util.getMonthMap(getName(i), months.get(i)));
 			System.out.println("本月返回结果：：" + msg);
@@ -272,7 +268,6 @@ public class GetDataUtils {
 				.println("-----------------------本年-------------------------");
 		ArrayList<YearLuck> years = (ArrayList<YearLuck>) map.get("本年");
 		for (int i = 0; i < years.size(); i++) {
-			System.out.println("本年" + years.get(i));
 			String msg = util.http(url,
 					util.getYearMap(getName(i), years.get(i)));
 			System.out.println("本年返回结果：：" + msg);

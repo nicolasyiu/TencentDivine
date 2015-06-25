@@ -147,19 +147,24 @@ public class GetDateDetalUtils {
 			while (m4.find()) {
 				switch (num4) {
 				case 1:
-					month.setZonghe(m4.group(1));
+					String zonghe = m4.group(1).replaceAll("<br/>","");
+					month.setZonghe(zonghe);
 					break;
 				case 2:
-					month.setLove(m4.group(1));
+					String love = m4.group(1).replaceAll("<br/>","");
+					month.setLove(love);
 					break;
 				case 3:
-					month.setWork(m4.group(1));
+					String work = m4.group(1).replaceAll("<br/>","");
+					month.setWork(work);
 					break;
 				case 4:
-					month.setHealth(m4.group(1));
+					String health = m4.group(1).replaceAll("<br/>","");
+					month.setHealth(health);
 					break;
 				case 5:
-					month.setCaiyun( m4.group(1));
+					String caiyun = m4.group(1).replaceAll("<br/>","");
+					month.setCaiyun(caiyun);
 					break;
 
 				default:
