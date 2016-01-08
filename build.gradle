@@ -1,8 +1,8 @@
 group 'com.blsm.java.lib'
-version '1.0.0'
+version '1.0.2'
 
-apply plugin: 'groovy'
 apply plugin: 'java'
+apply plugin: 'application'
 
 sourceCompatibility = 1.5
 
@@ -10,7 +10,12 @@ repositories {
     mavenCentral()
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.blue.getdata.bean.Main'
+    }
+}
+
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.3.11'
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
