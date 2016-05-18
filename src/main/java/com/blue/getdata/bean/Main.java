@@ -108,6 +108,7 @@ public class Main {
                     List<TodayLuck> todayList = new ArrayList<TodayLuck>();
                     List<TodayLuck> tomorrowList = new ArrayList<TodayLuck>();
                     for (Constellation constellation : cons) {
+                        System.out.println(constellation);
                         TodayLuck today = (TodayLuck) utils.getDate(
                                 constellation.getUrl(), times.getModel());
                         // System.out.println(today);
@@ -171,8 +172,7 @@ public class Main {
                     sb.append(URLEncoder.encode(e.getValue(), "utf-8"));
                 } catch (UnsupportedEncodingException e1) {
                     e1.printStackTrace();
-                }
-                catch (NullPointerException ee){
+                } catch (NullPointerException ee) {
                     ee.printStackTrace();
                 }
                 sb.append("&");
@@ -226,41 +226,41 @@ public class Main {
         String url = "http://divine.sinaapp.com/enter.php/Api/Horoscope/updateHoroscope";
         Map<String, List> map = util
                 .getAllData("http://astro.fashion.qq.com/index.shtml");
-//        System.out
-//                .println("-----------------------今日-------------------------");
-//        ArrayList<TodayLuck> todays = (ArrayList<TodayLuck>) map.get("今日");
-//        for (int i = 0; i < todays.size(); i++) {
-//            String msg = util.http(url,
-//                    util.getTodayMap(getName(i), getDay(), todays.get(i)));
-//            System.out.println("今日返回结果：：" + msg);
-//        }
-//
-//        System.out
-//                .println("-----------------------明日-------------------------");
-//        ArrayList<TodayLuck> tomorrows = (ArrayList<TodayLuck>) map.get("明日");
-//        for (int i = 0; i < tomorrows.size(); i++) {
-//            String msg = util.http(
-//                    url,
-//                    util.getTodayMap(getName(i), getTomorrow(),
-//                            tomorrows.get(i)));
-//            System.out.println("明日返回结果：：" + msg);
-//        }
-//        System.out
-//                .println("-----------------------本周-------------------------");
-//        ArrayList<WeekLuck> weeks = (ArrayList<WeekLuck>) map.get("本周");
-//        for (int i = 0; i < weeks.size(); i++) {
-//            String msg = util.http(url,
-//                    util.getWeekMap(getName(i), weeks.get(i)));
-//            System.out.println("本周返回结果：：" + msg);
-//        }
-//        System.out
-//                .println("-----------------------本月-------------------------");
-//        ArrayList<MonthLuck> months = (ArrayList<MonthLuck>) map.get("本月");
-//        for (int i = 0; i < months.size(); i++) {
-//            String msg = util.http(url,
-//                    util.getMonthMap(getName(i), months.get(i)));
-//            System.out.println("本月返回结果：：" + msg);
-//        }
+        System.out
+                .println("-----------------------今日-------------------------");
+        ArrayList<TodayLuck> todays = (ArrayList<TodayLuck>) map.get("今日");
+        for (int i = 0; i < todays.size(); i++) {
+            String msg = util.http(url,
+                    util.getTodayMap(getName(i), getDay(), todays.get(i)));
+            System.out.println("今日返回结果：：" + msg);
+        }
+
+        System.out
+                .println("-----------------------明日-------------------------");
+        ArrayList<TodayLuck> tomorrows = (ArrayList<TodayLuck>) map.get("明日");
+        for (int i = 0; i < tomorrows.size(); i++) {
+            String msg = util.http(
+                    url,
+                    util.getTodayMap(getName(i), getTomorrow(),
+                            tomorrows.get(i)));
+            System.out.println("明日返回结果：：" + msg);
+        }
+        System.out
+                .println("-----------------------本周-------------------------");
+        ArrayList<WeekLuck> weeks = (ArrayList<WeekLuck>) map.get("本周");
+        for (int i = 0; i < weeks.size(); i++) {
+            String msg = util.http(url,
+                    util.getWeekMap(getName(i), weeks.get(i)));
+            System.out.println("本周返回结果：：" + msg);
+        }
+        System.out
+                .println("-----------------------本月-------------------------");
+        ArrayList<MonthLuck> months = (ArrayList<MonthLuck>) map.get("本月");
+        for (int i = 0; i < months.size(); i++) {
+            String msg = util.http(url,
+                    util.getMonthMap(getName(i), months.get(i)));
+            System.out.println("本月返回结果：：" + msg);
+        }
         System.out
                 .println("-----------------------本年-------------------------");
         ArrayList<YearLuck> years = (ArrayList<YearLuck>) map.get("本年");
